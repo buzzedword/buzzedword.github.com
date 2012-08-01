@@ -1,0 +1,24 @@
+{
+  "name": "buzzedword.github.com",
+  "version": "0.1.1",
+  "description": "Repo display, roughly modeled after twitter.github.com",
+  "main": "grunt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/buzzedword/buzzedword.github.com.git"
+  },
+  "keywords": [
+    "repos",
+    "code",
+    "javascript"
+  ],
+  "author": "Danny Garcia",
+  "license": "ALv2",
+  "dependencies": {
+    "grunt-recess": "~0.1.0",
+    "grunt-imagine": "~0.2.0"
+  }
+}

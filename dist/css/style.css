@@ -1,0 +1,458 @@
+/**
+ * Refactor CSS base to LESS
+ * Author: Danny Garcia
+ * http://about.me/buzzedword
+ */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.grid-1,
+.grid-2,
+.grid-3,
+.grid-4 {
+  display: inline;
+  float: left;
+  position: relative;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* Grid >> Children (Alpha ~ First, Omega ~ Last) */
+
+.alpha {
+  margin-left: 0;
+}
+
+.omega {
+  margin-right: 0;
+}
+
+/* Grid >> 4 Columns */
+
+.grid .grid-1 {
+  width: 220px;
+}
+
+.grid .grid-2 {
+  width: 460px;
+}
+
+.grid .grid-3 {
+  width: 700px;
+}
+
+.grid .grid-4 {
+  width: 940px;
+}
+
+/* http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.clearfix {
+  *zoom: 1;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+html {
+  background: url("../img/bg.png") repeat;
+}
+
+body {
+  font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.4;
+  color: #666666;
+  min-width: 960px;
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 20px;
+  color: #333333;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+  color: #0084b4;
+}
+
+a:link,
+a:visited {
+  color: #0084b4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#wrapper {
+  position: relative;
+  width: 960px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+#main {
+  height: 400px;
+  text-align: center;
+  background: white;
+  background: rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+#main h1 {
+  margin: 30px 0;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#main p {
+  margin-left: 15px;
+  margin-right: 15px;
+  font-size: 11px;
+  line-height: 2;
+}
+
+div.header {
+  background: white;
+  background: rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  height: 130px;
+}
+
+div.header h1 {
+  margin: 10px 15px 0;
+  margin-bottom: 10px;
+}
+
+div.header p {
+  margin: 10px 15px 0;
+}
+
+li.repo {
+  background: white;
+  background: rgba(255, 255, 255, 0.7);
+  -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  height: 250px;
+}
+
+li.repo > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+li.repo a:hover {
+  background: #efefef;
+  background: rgba(0, 0, 0, 0.05);
+}
+
+li.repo h2 {
+  margin: 10px 15px;
+  margin-bottom: 2px;
+  max-width: 160px;
+  overflow: hidden;
+}
+
+li.repo h3 {
+  margin: 10px 15px;
+  font-size: 11px;
+  margin-top: 2px;
+  margin-bottom: 15px;
+  color: #999999;
+}
+
+li.repo p {
+  margin: 10px 15px;
+}
+
+#logo {
+  width: 190px;
+  height: 64px;
+  margin: 15px 0 0 15px;
+  background: url("../img/logo.png");
+  text-indent: -99999px;
+}
+
+#logo h1 {
+  margin: 0;
+}
+
+#num-repos,
+#num-members {
+  font-size: 14px;
+  font-weight: bold;
+  color: #0084b4;
+  line-height: 15px;
+}
+
+#statistics a:link,
+#statistics a:visited {
+  color: inherit;
+}
+
+#statistics p.email {
+  margin-top: 6px;
+  font-size: 11px;
+}
+
+#recently-updated h1 a {
+  font-weight: normal;
+  font-size: 11px;
+}
+
+#recently-updated-repos {
+  margin-left: 15px;
+}
+
+#recently-updated-repos li {
+  line-height: 1.5;
+}
+
+#recently-updated-repos li span.time a,
+#recently-updated-repos li span.watchers a,
+#recently-updated-repos li span.forks a {
+  color: #999999;
+}
+
+#recently-updated-repos li span {
+  display: inline-block;
+  padding: 0 1px;
+  font-size: 11px;
+}
+
+#recently-updated-repos li span.name {
+  padding: 0 6px 0 0;
+  font-size: 13px;
+}
+
+.repo:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid transparent;
+  border-right: 50px solid #0080b0;
+  pointer-events: none;
+}
+
+.repo.javascript:after {
+  border-right-color: #333333;
+}
+
+.repo.scala:after {
+  border-right-color: #7ac9de;
+}
+
+.repo.ruby:after {
+  border-right-color: #cc1100;
+}
+
+.repo.java:after {
+  border-right-color: #cc8300;
+}
+
+.repo.python:after {
+  border-right-color: #6aad2d;
+}
+
+.larry.size-smaller,
+.larry .larry.size-small {
+  animation: small-swing 0.5s infinite ease-in-out;
+  -moz-animation: small-swing 0.5s infinite ease-in-out;
+  -webkit-animation: small-swing 0.5s infinite ease-in-out;
+  -ms-animation: small-swing 0.5s infinite ease-in-out;
+}
+
+.larry.size-medium {
+  animation: medium-swing 1.25s infinite ease-in-out;
+  -moz-animation: medium-swing 1.25s infinite ease-in-out;
+  -webkit-animation: medium-swing 1.25s infinite ease-in-out;
+  -ms-animation: medium-swing 1.25s infinite ease-in-out;
+  animation: large-swing 1.5s infinite ease-in-out;
+  -moz-animation: large-swing 1.5s infinite ease-in-out;
+  -webkit-animation: large-swing 1.5s infinite ease-in-out;
+  -ms-animation: large-swing 1.5s infinite ease-in-out;
+}
+
+.larry.size-large {
+  animation: medium-swing 1.25s infinite ease-in-out;
+  -moz-animation: medium-swing 1.25s infinite ease-in-out;
+  -webkit-animation: medium-swing 1.25s infinite ease-in-out;
+  -ms-animation: medium-swing 1.25s infinite ease-in-out;
+}
+
+.larry.size-fat {
+  animation: large-swing 1.5s infinite ease-in-out;
+  -moz-animation: large-swing 1.5s infinite ease-in-out;
+  -webkit-animation: large-swing 1.5s infinite ease-in-out;
+  -ms-animation: large-swing 1.5s infinite ease-in-out;
+}
+
+#flyzone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
