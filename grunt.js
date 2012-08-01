@@ -2,6 +2,7 @@
 module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-recess');
+  grunt.loadNpmTasks('grunt-imagine');
 
   // Recess helper function
   var recessOptions = function(bool) {
@@ -46,8 +47,14 @@ module.exports = function(grunt) {
       files: ['grunt.js', dirs.js.src + '*.js']
     },
     watch: {
-      files: dirs.less + '*.less',
-      tasks: 'recess'
+      less: {
+        files: [dirs.less + '*.less'],
+        tasks: 'recess'
+      },
+      images: {
+        files: [dirs.img + '*.*'],
+        tasks: 'imgmin'
+      }
     },
     concat: {
       libs: {
@@ -60,6 +67,18 @@ module.exports = function(grunt) {
         src : dirs.js.libs + '*.js',
         dest: dirs.dist.js + 'libs.js'
       }
+    },
+    pngmin: {
+        src: [dirs.img + '*.png'],
+        dest: dirs.dist.base
+    },
+    gifmin: {
+        src: [dirs.img + '*.gif'],
+        dest: dirs.dist.base
+    },
+    jpgmin: {
+        src: [dirs.img + '*.jpg', dirs.img + '*.jpeg'],
+        dest: dirs.dist.base
     },
     recess: {
       max: {
@@ -95,4 +114,5 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', 'recess');
+  grunt.registerTask('imgmin', 'pngmin gifmin jpgmin');
 };

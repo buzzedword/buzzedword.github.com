@@ -18,6 +18,7 @@
   "author": "Danny Garcia",
   "license": "ALv2",
   "dependencies": {
-    "grunt-recess": "~0.1.0"
+    "grunt-recess": "~0.1.0",
+    "grunt-imagine": "~0.2.0"
   }
 }

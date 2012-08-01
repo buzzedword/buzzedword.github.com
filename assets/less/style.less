@@ -17,12 +17,14 @@ h2 {
   font-size:20px;
   color:#0084b4;
 }
-a:link, a:visited {
-  color:#0084b4;
-  text-decoration:none;
-}
-a:hover {
-  text-decoration:underline;
+a{
+  &:link, &:visited {
+    color:#0084b4;
+    text-decoration:none;
+  }
+  &:hover {
+    text-decoration:underline;
+  }
 }
 #wrapper {
   position:relative;
@@ -151,60 +153,51 @@ li.repo {
     }
   }
 }
-.repo:after {
-  content:'';
-  position:absolute;
-  right:0;
-  top:0;
-  width:0;
-  height:0;
-  border-bottom:50px solid transparent;
-  border-left:50px solid transparent;
-  border-right:50px solid #0080b0;
-  pointer-events:none;
+
+.repo {
+  &:after {
+    content:'';
+    position:absolute;
+    right:0;
+    top:0;
+    width:0;
+    height:0;
+    border-bottom:50px solid transparent;
+    border-left:50px solid transparent;
+    border-right:50px solid #0080b0;
+    pointer-events:none;
+  }
+  &.javascript:after {
+    border-right-color:#333333;
+  }
+  &.scala:after {
+    border-right-color:#7ac9de;
+  }
+  &.ruby:after {
+    border-right-color:#cc1100;
+  }
+  &.java:after {
+    border-right-color:#cc8300;
+  }
+  &.python:after {
+    border-right-color:#6aad2d;
+  }
 }
-.repo.javascript:after {
-  border-right-color:#333333;
-}
-.repo.scala:after {
-  border-right-color:#7ac9de;
-}
-.repo.ruby:after {
-  border-right-color:#cc1100;
-}
-.repo.java:after {
-  border-right-color:#cc8300;
-}
-.repo.python:after {
-  border-right-color:#6aad2d;
-}
-.larry.size-smaller, .larry.size-small {
-  animation:small-swing 0.5s infinite ease-in-out;
-  -moz-animation:small-swing 0.5s infinite ease-in-out;
-  -webkit-animation:small-swing 0.5s infinite ease-in-out;
-  -ms-animation:small-swing 0.5s infinite ease-in-out;
-}
-.larry.size-medium {
-  animation:medium-swing 1.25s infinite ease-in-out;
-  animation:large-swing 1.5s infinite ease-in-out;
-  -moz-animation:medium-swing 1.25s infinite ease-in-out;
-  -moz-animation:large-swing 1.5s infinite ease-in-out;
-  -webkit-animation:medium-swing 1.25s infinite ease-in-out;
-  -webkit-animation:large-swing 1.5s infinite ease-in-out;
-  -ms-animation:medium-swing 1.25s infinite ease-in-out;
-  -ms-animation:large-swing 1.5s infinite ease-in-out;
-}
-.larry.size-large {
-  animation:medium-swing 1.25s infinite ease-in-out;
-  -moz-animation:medium-swing 1.25s infinite ease-in-out;
-  -webkit-animation:medium-swing 1.25s infinite ease-in-out;
-  -ms-animation:medium-swing 1.25s infinite ease-in-out;
-}
-.larry.size-fat {
-  animation:large-swing 1.5s infinite ease-in-out;
-  -moz-animation:large-swing 1.5s infinite ease-in-out;
-  -webkit-animation:large-swing 1.5s infinite ease-in-out;
-  -ms-animation:large-swing 1.5s infinite ease-in-out;
+
+.larry {
+  &.size-smaller, .larry.size-small {
+    .animation(small-swing 0.5s infinite ease-in-out)
+  }
+  &.size-medium {
+    .animation(medium-swing 1.25s infinite ease-in-out);
+    .animation(large-swing 1.5s infinite ease-in-out);
+  }
+  &.size-large {
+    .animation(medium-swing 1.25s infinite ease-in-out);
+  }
+  &.size-fat {
+    .animation(large-swing 1.5s infinite ease-in-out);
+  }
 }
 #flyzone {
   position:fixed;
