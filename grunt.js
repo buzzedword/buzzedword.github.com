@@ -54,18 +54,26 @@ module.exports = function(grunt) {
       images: {
         files: [dirs.img + '*.*'],
         tasks: 'imgmin'
+      },
+      dist_js: {
+        files: [dirs.js.src + '*.js', dirs.js.libs + '*.js'],
+        tasks: 'deploy'
       }
     },
     concat: {
       libs: {
         src : dirs.js.libs + '*.js',
         dest: dirs.dist.js + 'libs.js'
+      },
+      deploy: {
+        src: [dirs.dist.js + 'libs.js', dirs.dist.js + 'app.min.js'],
+        dest: dirs.dist.js + 'compiled.min.js'
       }
     },
     min: {
-      libs: {
-        src : dirs.js.libs + '*.js',
-        dest: dirs.dist.js + 'libs.js'
+      js: {
+        src: dirs.js.src + 'app.js',
+        dest: dirs.dist.js + 'app.min.js'
       }
     },
     pngmin: {
@@ -119,5 +127,6 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', 'recess');
   grunt.registerTask('observe', 'server watch');
+  grunt.registerTask('deploy', 'concat:libs min:js concat:deploy');
   grunt.registerTask('imgmin', 'pngmin gifmin jpgmin');
 };
