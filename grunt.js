@@ -109,10 +109,15 @@ module.exports = function(grunt) {
       globals: {
         jQuery: true
       }
+    },
+    server: {
+      port: 8000,
+      base: '.'
     }
   });
 
   // Default task.
   grunt.registerTask('default', 'recess');
+  grunt.registerTask('observe', 'server watch');
   grunt.registerTask('imgmin', 'pngmin gifmin jpgmin');
 };
