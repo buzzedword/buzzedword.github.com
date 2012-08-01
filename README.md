@@ -1,7 +1,7 @@
-twitter.github.com
+buzzedword.github.com
 ======
 
-The source code of http://twitter.github.com/
+A project loosely based off of twitter.github.com. All credit due to Twitter, Inc.
 
 LICENSE
 ------------
